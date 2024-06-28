@@ -1,8 +1,8 @@
 <?php
 // Подключаем файлы PHPMailer
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-require 'PHPMailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
+require 'phpmailer/src/Exception.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->setFrom($email, $name);
 
         // Кому письмо
-        $mail->addAddress('samsungkh0901@gmail.com', 'JOpa'); // Ваш email и имя
+        $mail->addAddress('samsungkh0901@gmail.com', 'Joap'); // Ваш email и имя
 
         // Тема письма
         $mail->Subject = 'Новое сообщение с формы';
@@ -45,4 +45,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
