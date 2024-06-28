@@ -32,8 +32,6 @@ body {
     max-width: 1105px;
     margin: 0 auto;
     padding: 0 15px;
-    position: relative;
-    z-index: 2;
 }
 
 
