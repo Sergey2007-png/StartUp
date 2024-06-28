@@ -700,6 +700,11 @@ font-family: "DM Sans", sans-serif;
 
 /* CONTACT */
 
+.contact_portfolio {
+    padding: 100px 0 0 0;
+}
+
+
 .contact {
     text-align: center;
     margin-bottom: 100px;
