@@ -39,7 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Отправляем письмо
         $mail->send();
-        echo 'Сообщение отправлено';
+        header('Location: index.html?status=success');
+        exit();
     } catch (Exception $e) {
         echo "Сообщение не может быть отправлено. Ошибка: {$mail->ErrorInfo}";
     }
