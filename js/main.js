@@ -24,6 +24,36 @@ const text = {
         ua: 'Ми готові створити для вас вебсайт з будь-яким дизайном та контентом на основі ваших побажань.',
         sl: 'Sme pripravení vytvoriť pre vás webovú stránku s akýmkoľvek dizajnom a obsahom podľa vašich želaní.',
     },
+    'header_main_btn-text-mobile': {
+        en: 'Get started',
+        ua: 'Початок',
+        sl: 'Začnite',
+    },
+    'header_main-info-title-mobile': {
+        en: 'Welcome to our website!',
+        ua: 'Ласкаво просимо на наш вебсайт!',
+        sl: 'Vitajte na našej webovej stránke!',
+    },
+    'header_main-text-mobile': {
+        en: 'We are ready to create a Website for you with any design and content based on your wishes.',
+        ua: 'Ми готові створити для вас вебсайт з будь-яким дизайном та контентом на основі ваших побажань.',
+        sl: 'Sme pripravení vytvoriť pre vás webovú stránku s akýmkoľvek dizajnom a obsahom podľa vašich želaní.',
+    },
+    'header_main_btn-text': {
+        en: 'Get started',
+        ua: 'Початок',
+        sl: 'Začnite',
+    },
+    'problem_title': {
+        en: 'problem solving',
+        ua: "Розв'язання проблем",
+        sl: 'Riešenie problémov',
+    },
+    'header_main-info-title': {
+        en: 'Welcome to our website!',
+        ua: 'Ласкаво просимо на наш вебсайт!',
+        sl: 'Vitajte na našej webovej stránke!',
+    },
     'problem_title': {
         en: 'problem solving',
         ua: "Розв'язання проблем",
@@ -471,6 +501,33 @@ document.addEventListener('DOMContentLoaded', function () {
                         currentNode.innerHTML = text[key][lng]
                     }
                 }
+
+                switch (item.lng) {
+                    case 'ua':
+                        if (document.documentElement.clientWidth <= 550) {
+                            document.querySelector('.menu_list').style.right = '-14px'
+                            document.querySelector('.header_main-button-mobile').style.maxWidth = '170px'
+                            document.querySelector('.header_inner').style.marginBottom = '100px'
+                        }
+                        document.querySelector('.header_main-button').style.maxWidth = '200px'
+                        break;
+                    case 'sl':
+                        if (document.documentElement.clientWidth <= 550) {
+                            document.querySelector('.menu_list').style.right = '17px'
+                            document.querySelector('.header_main-button-mobile').style.maxWidth = '155px'
+                            document.querySelector('.header_inner').style.marginBottom = '100px'
+                        }
+                        document.querySelector('.header_main-button').style.maxWidth = '185px'
+                        break;
+                    case 'en':
+                        if (document.documentElement.clientWidth <= 550) {
+                            document.querySelector('.menu_list').style.right = '10px'
+                            document.querySelector('.header_main-button-mobile').style.maxWidth = '200px'
+                            document.querySelector('.header_inner').style.marginBottom = '100px'
+                        }
+                        document.querySelector('.header_main-button').style.maxWidth = '230px'
+                        break;
+                }
             }
         })
     }
@@ -511,3 +568,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
 });
+
