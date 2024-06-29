@@ -359,6 +359,7 @@ let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.pagination .dot');
 
+
 function showSlide(index) {
     slides.forEach((slide, i) => {
         if (i === index) {
@@ -378,7 +379,11 @@ function updateActiveDot(index) {
             dot.classList.remove('active');
         }
     });
+    currentSlide = index;
 }
+showSlide(currentSlide);
+
+
 
 function setActiveDot(index) {
     currentSlide = index;
