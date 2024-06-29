@@ -424,7 +424,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
+document.addEventListener("DOMContentLoaded", function () {
+    const alert = document.querySelector('.alert')
+    setInterval(() => {
+        alert.classList.toggle('active')
+    }, 500)
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     const faqButtons = document.querySelectorAll('.faq-button');
