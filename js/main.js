@@ -509,6 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             document.querySelector('.header_main-button-mobile').style.maxWidth = '170px'
                             document.querySelector('.header_inner').style.marginBottom = '100px'
                         }
+                        document.querySelector('.header_inner').style.marginBottom = '40px'
                         document.querySelector('.header_main-button').style.maxWidth = '200px'
                         break;
                     case 'sl':
@@ -517,6 +518,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             document.querySelector('.header_main-button-mobile').style.maxWidth = '155px'
                             document.querySelector('.header_inner').style.marginBottom = '100px'
                         }
+                        document.querySelector('.header_inner').style.marginBottom = '40px'
                         document.querySelector('.header_main-button').style.maxWidth = '185px'
                         break;
                     case 'en':
@@ -525,6 +527,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             document.querySelector('.header_main-button-mobile').style.maxWidth = '200px'
                             document.querySelector('.header_inner').style.marginBottom = '100px'
                         }
+                        document.querySelector('.header_inner').style.marginBottom = '100px'
                         document.querySelector('.header_main-button').style.maxWidth = '230px'
                         break;
                 }
