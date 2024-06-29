@@ -35,6 +35,69 @@ body {
 }
 
 
+
+.alert {
+    position: fixed;
+    z-index: 5;
+    right: 40px;
+    bottom: 40px;
+}
+.alert__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.alert__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.alert__arrow {
+    transition: all 0.5s;
+}
+.alert.active .alert__arrow {
+    margin-bottom: 10px;
+}
+.alert__arrow img{
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+}
+.alert__logo {
+    width: 55px;
+    height: 55px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.alert__logo img {
+    width: 40px;
+    height: 40px;
+}
+.alert__telephon {
+    width: 55px;
+    height: 55px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.alert__telephon img {
+    width: 30px;
+    height: 30px;
+}
+
+
+
 /* HEADER */
 
 .header {
@@ -1198,6 +1261,9 @@ font-family: "DM Sans", sans-serif;
   }
 
   @media(max-width:800px) {
+    .stages {
+        border-bottom-right-radius: 280px;
+    }
     .header {
     background: linear-gradient(to bottom right, #333333, #000000);
     border-bottom-right-radius: 280px;
@@ -1304,11 +1370,48 @@ font-family: "DM Sans", sans-serif;
     .footer_item-title {
         margin-bottom: 20px;
     }
+     .stages {
+        border-bottom-right-radius: 150px;
+    }
+
+.problem, .advantages {
+        padding-bottom: 50px;
+    }
+.alert {
+        right: 20px;
+        bottom: 20px;
+    }
+    .alert__arrow img{
+        width: 40px;
+        height: 40px;
+    }
+    .alert__links {
+        gap: 5px;
+    }
+    .alert__logo {
+        width: 45px;
+        height: 45px;
+    }
+    .alert__logo img {
+        width: 30px;
+        height: 30px;
+    }
+    .alert__telephon {
+        width: 45px;
+        height: 45px;
+    }
+    .alert__telephon img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 
 
 @media(max-width:550px) {
+    .stages {
+        padding-bottom: 1000px;
+    }
     .header-switcher {
         display: none;
     }
