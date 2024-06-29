@@ -1315,7 +1315,7 @@ font-family: "DM Sans", sans-serif;
     .header.active .header-switcher {
         display: block;
         top: 330px;
-        right: 78px;
+        right: 89px;
         z-index: 4;
     }
     .menu_list-item:hover {
@@ -1399,6 +1399,9 @@ font-family: "DM Sans", sans-serif;
     position: relative;
     padding-bottom: 0px;
     margin-bottom: 100px;
+}
+.stack_item:hover {
+    margin: 0 0 0 0;
 }
 
 }
@@ -1515,6 +1518,9 @@ font-family: "DM Sans", sans-serif;
 .portfolio_item-img {
     max-width: 100%;
 }
+.problem_item {
+    min-width: auto;
+}
  }
 
 @media(max-width:350px) {
@@ -1555,7 +1561,7 @@ font-family: "DM Sans", sans-serif;
 
 @media(max-width:340px) {
     .header.active .header-switcher {
-        right: 102px;
+        right: 92px;
     }
     .stages_info-text {
         font-size: 12px;
@@ -1592,3 +1598,4 @@ font-family: "DM Sans", sans-serif;
 .pagination .dot.active {
     background-color: #ccc;
 }
+
