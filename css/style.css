@@ -264,6 +264,7 @@ body {
     cursor: pointer;
     justify-content: space-between;
     transition: all 0.5s;
+    width: 92px;
 }
 .header-switcher__button:hover {
     background: #e0e0e0;
