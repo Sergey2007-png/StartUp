@@ -461,6 +461,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const switcher = document.querySelector('.header-switcher__button')
     const currentText = document.querySelector('.header-switcher__curtext')
@@ -505,6 +506,10 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('lng', item.dataset.lng);
             editCurrentLng(item.dataset.lng)
         })
+    })
+
+    window.addEventListener('resize', () => {
+        getStorageLng()
     })
 
     async function getStorageLng() {
@@ -605,4 +610,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
 });
+
 
