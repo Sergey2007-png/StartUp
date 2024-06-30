@@ -359,7 +359,6 @@ let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.pagination .dot');
 
-
 function showSlide(index) {
     slides.forEach((slide, i) => {
         if (i === index) {
@@ -379,11 +378,7 @@ function updateActiveDot(index) {
             dot.classList.remove('active');
         }
     });
-    currentSlide = index;
 }
-showSlide(currentSlide);
-
-
 
 function setActiveDot(index) {
     currentSlide = index;
@@ -468,6 +463,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const switcherBody = document.querySelector('.header-switcher-body')
     const options = document.querySelectorAll('.header-switcher-body__button')
 
+    getStorageLng()
+
     const lngArr = [
         {
             name: 'ENG',
@@ -491,18 +488,32 @@ document.addEventListener('DOMContentLoaded', function () {
         switcherBody.classList.toggle('active')
     })
 
+    document.querySelector('.header').addEventListener('click', e => {
+        if (e.target.className == 'header-switcher' || e.target.closest('.header-switcher')) {
+            return
+        }
+        switcherBody.classList.remove('active')
+    })
+
     options.forEach(item => {
         item.addEventListener('click', () => {
+            localStorage.setItem('lng', item.dataset.lng);
             editCurrentLng(item.dataset.lng)
         })
     })
+
+    async function getStorageLng() {
+        if (await localStorage.getItem('lng')) {
+            editCurrentLng(await localStorage.getItem('lng'))
+        }
+    }
 
     function editCurrentLng(lng) {
         lngArr.forEach(item => {
             if (item.lng == lng) {
                 currentText.innerHTML = item.name
                 currentFlag.children[0].src = item.flag
-                switcherBody.classList.toggle('active')
+                switcherBody.classList.remove('active')
 
                 for (key in text) {
                     const currentNode = document.querySelector(`.${key}`)
@@ -514,37 +525,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 switch (item.lng) {
                     case 'ua':
+                        setLngStyle('.header_inner', 'marginBottom', '40px')
+                        setLngStyle('.header_main-button', 'maxWidth', '200px')
                         if (document.documentElement.clientWidth <= 550) {
-                            document.querySelector('.menu_list').style.right = '-14px'
-                            document.querySelector('.header_main-button-mobile').style.maxWidth = '170px'
-                            document.querySelector('.header_inner').style.marginBottom = '100px'
+                            setLngStyle('.menu_list', 'right', '-14px')
+                            setLngStyle('.header_main-button-mobile', 'maxWidth', '170px')
+                            setLngStyle('.header_inner', 'marginBottom', '100px')
                         }
-                        document.querySelector('.header_inner').style.marginBottom = '40px'
-                        document.querySelector('.header_main-button').style.maxWidth = '200px'
                         break;
                     case 'sl':
+                        setLngStyle('.header_inner', 'marginBottom', '40px')
+                        setLngStyle('.header_main-button', 'maxWidth', '185px')
                         if (document.documentElement.clientWidth <= 550) {
-                            document.querySelector('.menu_list').style.right = '17px'
-                            document.querySelector('.header_main-button-mobile').style.maxWidth = '155px'
-                            document.querySelector('.header_inner').style.marginBottom = '100px'
+                            setLngStyle('.menu_list', 'right', '17px')
+                            setLngStyle('.header_main-button-mobile', 'maxWidth', '155px')
+                            setLngStyle('.header_inner', 'marginBottom', '100px')
                         }
-                        document.querySelector('.header_inner').style.marginBottom = '40px'
-                        document.querySelector('.header_main-button').style.maxWidth = '185px'
                         break;
                     case 'en':
+                        setLngStyle('.header_inner', 'marginBottom', '100px')
+                        setLngStyle('.header_main-button', 'maxWidth', '230px')
                         if (document.documentElement.clientWidth <= 550) {
-                            document.querySelector('.menu_list').style.right = '10px'
-                            document.querySelector('.header_main-button-mobile').style.maxWidth = '200px'
-                            document.querySelector('.header_inner').style.marginBottom = '100px'
+                            setLngStyle('.menu_list', 'right', '10px')
+                            setLngStyle('.header_main-button-mobile', 'maxWidth', '200px')
+                            setLngStyle('.header_inner', 'marginBottom', '100px')
                         }
-                        document.querySelector('.header_inner').style.marginBottom = '100px'
-                        document.querySelector('.header_main-button').style.maxWidth = '230px'
                         break;
                 }
             }
         })
     }
 });
+
+function setLngStyle(selector, styleName, value) {
+    const elem = document.querySelector(selector)
+
+    if (elem) {
+        elem.style[styleName] = value
+    }
+}
 
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
