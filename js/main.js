@@ -359,32 +359,24 @@ let currentSlide = 0;
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.pagination .dot');
 
+
 function showSlide(index) {
     slides.forEach((slide, i) => {
         if (i === index) {
-            slide.classList.add('active');
-        } else {
-            slide.classList.remove('active');
-        }
-    });
-    updateActiveDot(index);
-}
-
-function updateActiveDot(index) {
-    dots.forEach((dot, i) => {
-        if (i === index) {
-            dot.classList.add('active');
-        } else {
+@@ -378,7 +379,11 @@ function updateActiveDot(index) {
             dot.classList.remove('active');
         }
     });
+    currentSlide = index;
 }
+showSlide(currentSlide);
+
+
 
 function setActiveDot(index) {
     currentSlide = index;
     showSlide(currentSlide);
 }
-
 function nextSlide() {
     currentSlide++;
     if (currentSlide >= slides.length) {
@@ -392,7 +384,6 @@ function nextSlide() {
     }
     showSlide(currentSlide);
 }
-
 function prevSlide() {
     currentSlide--;
     if (currentSlide < 0) {
