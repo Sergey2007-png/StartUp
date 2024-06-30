@@ -363,7 +363,19 @@ const dots = document.querySelectorAll('.pagination .dot');
 function showSlide(index) {
     slides.forEach((slide, i) => {
         if (i === index) {
-@@ -378,7 +379,11 @@ function updateActiveDot(index) {
+            slide.classList.add('active');
+        } else {
+            slide.classList.remove('active');
+        }
+    });
+    updateActiveDot(index);
+}
+
+function updateActiveDot(index) {
+    dots.forEach((dot, i) => {
+        if (i === index) {
+            dot.classList.add('active');
+        } else {
             dot.classList.remove('active');
         }
     });
@@ -377,6 +389,7 @@ function setActiveDot(index) {
     currentSlide = index;
     showSlide(currentSlide);
 }
+
 function nextSlide() {
     currentSlide++;
     if (currentSlide >= slides.length) {
@@ -384,6 +397,7 @@ function nextSlide() {
     }
     showSlide(currentSlide);
 }
+
 function prevSlide() {
     currentSlide--;
     if (currentSlide < 0) {
